@@ -1,0 +1,28 @@
+<x-layout title="Activities">
+    <section class="py-10 max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-heading text-spider-dark mb-8 text-center">Activities</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+            
+            <!-- Activity Card 1 -->
+            <div class="p-6 bg-spider-secondary rounded-2xl shadow-soft border border-spider-soft hover:shadow-lg transition">
+                <h3 class="font-heading text-xl text-spider-primary mb-3">Activity #1</h3>
+                <p class="text-sm text-spider-accent mb-4">
+                    Generate users using factories, seeders, and models in tabular format.
+                </p>
+                <a href="#" class="inline-block px-4 py-2 bg-spider-primary text-spider-secondary font-semibold rounded-xl hover:bg-spider-dark transition">
+                    Visit
+                </a>
+            </div>
+
+            <!-- Activity Card 2 -->
+            <div class="p-6 bg-spider-secondary rounded-2xl shadow-soft border border-spider-soft hover:shadow-lg transition">
+                <h3 class="font-heading text-xl text-spider-primary mb-3">Upcoming Activities</h3>
+                <p class="text-sm text-spider-accent mb-4">Stay tuned for more activities coming soon!</p>
+                <a href="#" class="inline-block px-4 py-2 bg-spider-primary text-spider-secondary font-semibold rounded-xl hover:bg-spider-dark transition">
+                    Visit
+                </a>
+            </div>
+
+        </div>
+    </section>
+</x-layout>
