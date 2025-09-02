@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./resources/**/*.blade.php",
@@ -20,15 +21,15 @@ export default {
         body: ['Inter', 'sans-serif'],
       },
       spacing: {
-        'fluid': 'clamp(1rem, 2vw, 2rem)', // responsive spacing
+        fluid: 'clamp(1rem, 2vw, 2rem)', // responsive spacing
       },
       borderRadius: {
-        'xl': '1rem',
+        xl: '1rem',
         '2xl': '1.5rem',
       },
       boxShadow: {
-        'soft': '0 4px 12px rgba(0,0,0,0.1)',
+        soft: '0 4px 12px rgba(0,0,0,0.1)',
       },
     },
-  }
+  },
 }

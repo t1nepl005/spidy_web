@@ -1,7 +1,5 @@
-<x-layout title="David Datu Sarmiento | Biography">
-
-    <!-- Navigation -->
-    <nav class="flex flex-wrap items-center justify-between sticky top-0 bg-spider-soft px-6 py-3 sm:py-5" x-data="{ open: false }">
+<x-member title="David's Page" jsResources="alpine">
+    <nav class="flex flex-wrap items-center justify-between sticky top-13 bg-white px-6 py-3 sm:py-5" x-data="{ open: false }">
         <h1 class="text-[1rem] font-heading inline-flex items-center gap-2 text-spider-dark">
             David Datu Sarmiento | Biography
         </h1>
@@ -10,11 +8,9 @@
             &#9776;
         </button>
 
-        <div 
-            :class="[
-                'flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base mt-3 sm:mt-0',
-                open || !window.innerWidth < 640 ? 'flex' : 'hidden'
-            ]"
+        <div
+            :class="open ? 'flex' : 'hidden'"
+            class="basis-full sm:basis-auto flex-col sm:flex sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base mt-3 sm:mt-0"
         >
             <a href="#biodata" class="hover:text-spider-primary">Biodata</a>
             <a href="#myStory" class="hover:text-spider-primary">My Story</a>
@@ -22,6 +18,7 @@
             <a href="#social-media" class="hover:text-spider-primary">Social Media</a>
         </div>
     </nav>
+
 
     <!-- Biodata Section -->
     <section id="biodata" class="grid sm:grid-cols-2 gap-10 py-10 max-w-6xl mx-auto px-5">
@@ -100,5 +97,4 @@
             </a>
         </div>
     </section>
-
-</x-layout>
+</x-member>

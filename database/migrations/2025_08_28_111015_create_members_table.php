@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('bio');
-            $table->string('img_path');
+            $table->text('bio')->nullable();
+            $table->string('img_path')->nullable();
+            $table->string('url_route');
             $table->timestamps();
         });
     }

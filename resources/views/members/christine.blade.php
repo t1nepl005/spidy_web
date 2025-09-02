@@ -1,4 +1,4 @@
-<x-layout title="Christine Lopez Page"> 
+<x-member title="Christine Lopez Page" :wrapped="true"> 
     <!-- Intro Section -->
     <section class="max-w-3xl mx-auto text-center py-12 px-6">
     <img src="{{asset('images/christine/tintin.jpeg')}}" alt="Profile photo" 
