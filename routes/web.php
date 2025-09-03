@@ -13,6 +13,10 @@ Route::get('/member/dxvid', function() {
     return view('members.david');
 });
 
+Route::get('/member/tine', function() {
+    return view('members.christine');
+});
+
 
 // Route::get('/member/{id}', [HomeController::class, 'member']); future feature na to
 Route::get('/activities', [ActivityController::class, 'index']);
