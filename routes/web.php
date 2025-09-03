@@ -13,6 +13,10 @@ Route::get('/member/dxvid', function() {
     return view('members.david');
 });
 
+Route::get('member/peterjohn', function() {
+    return view('members.peterjohn');
+});
+
 Route::get('/member/tine', function() {
     return view('members.christine');
 });
