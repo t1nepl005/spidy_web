@@ -13,12 +13,12 @@ class MemberSeeder extends Seeder {
                 'img_path' => 'images/david/MyPhoto.png',
                 'url_route' => 'dxvid',
             ],
-            // [
-            //     'name' => 'Christine Lopez',
-            //     'bio' => 'IT pindot pindot lang.',
-            //     'img_path' => 'images/christine/tintin.jpeg',
-            //     'url_route' => 'christine',
-            // ],
+            [
+                'name' => 'Christine Lopez',
+                'bio' => 'IT pindot pindot lang.',
+                'img_path' => 'images/christine/tintin.jpeg',
+                'url_route' => 'tine',
+            ],
         ];
 
         foreach ($members as $member) {
