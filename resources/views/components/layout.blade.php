@@ -1,5 +1,5 @@
 @props([
-    'title' => 'DC Team',
+    'title' => 'Spidy Team',
     'wrapped' => true,
     'bgImagePath' => 'images/spiderbg.jpg',
     'jsResources' => null,

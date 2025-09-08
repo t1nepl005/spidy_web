@@ -38,4 +38,4 @@
         <p>Art is my safe space—I love sketching and drawing to express emotions. Music is another escape, whether I’m happy, sad, or just bored.</p>
     </div>
     </section>
-</x-layout>
+</x-member>
