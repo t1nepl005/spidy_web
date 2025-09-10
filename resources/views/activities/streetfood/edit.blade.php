@@ -6,7 +6,7 @@
         @method('PUT')
 
         @include('activities.streetfood._form', ['streetFood' => $streetFood])
-
+        
         <button type="submit">Save Changes</button>
     </form>
 

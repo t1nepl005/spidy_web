@@ -4,7 +4,11 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-:root {
+/* app.css */
+@tailwind utilities;
+
+/* Theme variables */
+@theme{
   --color-spider-primary: #ff6fae;
   --color-spider-secondary: #ffffff;
   --color-spider-accent: #000000;
@@ -20,9 +24,9 @@
   --shadow-soft: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.bg-spider-primary { background-color: var(--color-spider-primary); }
-.text-spider-primary { color: var(--color-spider-primary); }
-.p-fluid { padding: var(--spacing-fluid); }
-.rounded-xl { border-radius: var(--radius-xl); }
-.shadow-soft { box-shadow: var(--shadow-soft); }
-.font-heading { font-family: var(--font-heading); }
+/* Import modular UI parts */
+@import "./components/button.css";
+@import "./components/card.css";
+@import "./components/badge.css";
+@import "./components/table.css";
+

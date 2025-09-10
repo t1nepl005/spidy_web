@@ -1,0 +1,19 @@
+/* components/badge.css */
+.badge {
+  @apply text-xs px-2 py-1 rounded-full font-semibold;
+}
+
+.badge-active {
+  background-color: var(--color-spider-primary);
+  color: var(--color-spider-secondary);
+}
+
+.badge-pending {
+  background-color: #fef3c7; /* yellow-100 */
+  color: #92400e; /* yellow-800 */
+}
+
+.badge-completed {
+  background-color: #dbeafe; /* blue-100 */
+  color: #1e40af; /* blue-800 */
+}

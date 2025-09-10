@@ -1,0 +1,18 @@
+/* components/button.css */
+.btn {
+  @apply px-4 py-2 font-semibold rounded-xl shadow-soft transition;
+}
+
+.btn-primary {
+  background-color: var(--color-spider-primary);
+  color: var(--color-spider-secondary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-spider-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-spider-soft);
+  color: var(--color-spider-accent);
+}
