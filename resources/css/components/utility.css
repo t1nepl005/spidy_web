@@ -1,0 +1,15 @@
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+.section {
+  @apply py-8 md:py-12;
+}
+
+.translucent-bg{
+  @apply rounded-2xl bg-gradient-to-br from-pink-100/70 via-white/60 to-white/40 backdrop-blur-md shadow-xl p-8;
+}
+
+.raised{
+  @apply bg-white/30 shadow-xl;
+}

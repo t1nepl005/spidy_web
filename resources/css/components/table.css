@@ -18,18 +18,31 @@
 }
 
 /* Hover row */
+.table {
+  @apply w-full border-collapse text-left text-sm;
+  font-family: var(--font-body);
+}
+
+.table th {
+  @apply px-4 py-3 font-heading text-sm uppercase tracking-wide;
+  background-color: var(--color-spider-soft);
+  color: var(--color-spider-accent);
+  border-bottom: 2px solid var(--color-spider-primary);
+}
+
+.table td {
+  @apply px-4 py-2 border-b border-gray-200 text-spider-accent;
+}
+
 .table tbody tr:hover {
-  background-color: #f9fafb; /* gray-50 */
+  background-color: #f9fafb;
+  transition: background-color 0.15s ease;
 }
 
-/* Variants */
 .table-striped tbody tr:nth-child(even) {
-  background-color: #f3f4f6; /* gray-100 */
+  background-color: #f3f4f6;
 }
 
-.table-bordered th,
-.table-bordered td {
-  border: 1px solid #e5e7eb; /* gray-200 */
+.table-bordered th, .table-bordered td {
+  border: 1px solid #e5e7eb;
 }
-
-/* Highlig*

@@ -1,6 +1,13 @@
-/* components/button.css */
 .btn {
-  @apply px-4 py-2 font-semibold rounded-xl shadow-soft transition;
+  @apply px-5 py-2.5 font-semibold rounded-xl shadow-soft transition-all duration-200 transform;
+}
+
+.btn-brand-solid{
+  @apply px-3 py-1.5 rounded-lg bg-pink-500 text-white hover:bg-pink-600;
+}
+
+.btn-brand-outline{
+  @apply px-3 py-1.5 rounded-lg border border-pink-500 text-pink-500 hover:bg-pink-50;
 }
 
 .btn-primary {
@@ -10,9 +17,17 @@
 
 .btn-primary:hover {
   background-color: var(--color-spider-dark);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
   background-color: var(--color-spider-soft);
   color: var(--color-spider-accent);
 }
+
+.btn-secondary:hover {
+  background-color: #e5e7eb; /* gray-200 */
+  transform: translateY(-2px);
+}
+
+

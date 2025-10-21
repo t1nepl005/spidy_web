@@ -1,6 +1,6 @@
 /* components/badge.css */
 .badge {
-  @apply text-xs px-2 py-1 rounded-full font-semibold;
+  @apply text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm;
 }
 
 .badge-active {
@@ -9,11 +9,17 @@
 }
 
 .badge-pending {
-  background-color: #fef3c7; /* yellow-100 */
-  color: #92400e; /* yellow-800 */
+  background-color: #fef3c7;
+  color: #92400e;
 }
 
 .badge-completed {
-  background-color: #dbeafe; /* blue-100 */
-  color: #1e40af; /* blue-800 */
+  background-color: #dbeafe;
+  color: #1e40af;
 }
+
+.badge-soft {
+  background-color: var(--color-spider-soft);
+  color: var(--color-spider-accent);
+}
+
