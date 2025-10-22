@@ -8,6 +8,7 @@ use App\Http\Controllers\Activities\Activity1Controller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Activities\DavidTodoListController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -62,4 +63,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile/password', [ProfileController::class, 'password'])->name('profile.password');
     Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+
+    Route::get('todolist-david', function(){
+        return view('activities.todolist.david');
+    });
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/david-todo-list', [DavidTodoListController::class, 'index'])->name('david-todo-list.index');
+    Route::get('/david-todo-list/show', [DavidTodoListController::class, 'show'])->name('david-todo-list.show');
+    Route::post('/david-todo-list', [DavidTodoListController::class, 'store'])->name('david-todo-list.store');
+    Route::post('/david-todo-list/update', [DavidTodoListController::class, 'update'])->name('david-todo-list.update');
+    Route::post('/david-todo-list/update-status', [DavidTodoListController::class, 'updateStatus'])->name('david-todo-list.update-status');
+    Route::delete('/david-todo-list', [DavidTodoListController::class, 'destroy'])->name('david-todo-list.destroy');
 });
