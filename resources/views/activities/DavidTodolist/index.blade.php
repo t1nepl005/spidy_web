@@ -44,7 +44,7 @@
         }
     </style>
 
-    <div class="font-body antialiased bg-spider-soft text-spider-accent">
+    <div class="font-body antialiased text-spider-accent">
         <div x-data="taskApp()" x-init="init()" class="min-h-screen">
             <!-- Top Navigation -->
             <header class="fixed top-0 left-0 right-0 z-40 bg-spider-secondary shadow-soft border-b border-gray-200">
@@ -61,7 +61,7 @@
                             @foreach(['all' => 'All', 'pending' => 'Pending', 'doing' => 'Doing', 'finished' => 'Finished'] as $id => $label)
                                 <a
                                     href="{{ route('david-todo-list.index', ['tab' => $id]) }}"
-                                    class="{{ request('tab', 'all') === $id ? 'border-b-2 border-spider-primary text-spider-primary font-semibold' : 'text-spider-dark hover:text-spider-primary' }} px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-spider-primary rounded-t bg-transparent whitespace-nowrap"
+                                    class="{{ request('tab', 'all') === $id ? 'border-b-2 border-spider-primary text-spider-primary font-semibold' : 'text-spider-dark hover:text-spider-primary' }} px-4 py-2 text-sm font-medium transition-colors rounded-t bg-transparent whitespace-nowrap"
                                 >
                                     {{ $label }}
                                 </a>
@@ -348,7 +348,7 @@
             <!-- Floating Action Button -->
             <button
                 @click="openCreateModal()"
-                class="fixed bottom-14 right-14 w-14 h-14 bg-spider-primary text-white rounded-full shadow-soft hover:bg-spider-dark transition-all focus:outline-none focus:ring-2 focus:ring-spider-primary focus:ring-offset-2 flex items-center justify-center z-30"
+                class="fixed bottom-8 right-8 w-14 h-14 bg-spider-primary text-white rounded-full shadow-soft hover:bg-spider-dark transition-all focus:outline-none focus:ring-2 focus:ring-spider-primary focus:ring-offset-2 flex items-center justify-center z-30"
                 aria-label="Create new task"
             >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
