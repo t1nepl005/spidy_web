@@ -8,6 +8,7 @@ use App\Http\Controllers\Activities\Activity1Controller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TodoListChristineController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -62,4 +63,21 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile/password', [ProfileController::class, 'password'])->name('profile.password');
     Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/profile/password', [ProfileController::class, 'password'])->name('profile.password');
+    Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/todo', [TodoListChristineController::class, 'index'])->name('todo.index');
+    Route::post('/todo', [TodoListChristineController::class, 'store'])->name('todo.store');
+    Route::patch('/todo/{todoListChristine}/status', [TodoListChristineController::class, 'updateStatus'])->name('todo.updateStatus');
+    Route::delete('/todo/{todoListChristine}', [TodoListChristineController::class, 'destroy'])->name('todo.destroy');
 });
