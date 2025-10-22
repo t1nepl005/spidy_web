@@ -49,17 +49,9 @@
             <!-- Top Navigation -->
             <header class="fixed top-0 left-0 right-0 z-40 bg-spider-secondary shadow-soft border-b border-gray-200">
                 <nav class="px-4 py-4 md:px-8">
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-start mb-4">
                         <h1 class="text-2xl font-heading font-bold text-spider-dark">David Todo List</h1>
-                        <button 
-                            @click="showMobileMenu = !showMobileMenu"
-                            class="p-2 text-spider-dark hover:text-spider-primary transition-colors focus:outline-none focus:ring-2 focus:ring-spider-primary rounded md:hidden"
-                            aria-label="Menu"
-                        >
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
+                       
                     </div>
 
                     <!-- Tabs and Actions -->
@@ -74,10 +66,30 @@
                                     {{ $label }}
                                 </a>
                             @endforeach
+                             <!-- Mobile Hamburger (hidden on md and up) -->
+                            <button 
+                                @click="showMobileMenu = !showMobileMenu"
+                                class="p-2 text-spider-dark hover:text-spider-primary transition-colors focus:outline-none focus:ring-2 focus:ring-spider-primary rounded md:hidden"
+                                aria-label="Menu"
+                            >
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
                         </div>
 
-                        <!-- Action Buttons (Desktop: always visible, Mobile: collapsible) -->
-                        <div x-show="showMobileMenu || window.innerWidth >= 768" class="flex items-center gap-2 mt-4 md:mt-0">
+                        <!-- Action Buttons (Desktop: always visible, Mobile: floating translucent panel) -->
+                        <div 
+                            x-show="showMobileMenu || window.innerWidth >= 768"
+                            @click.away="showMobileMenu = false"
+                            x-transition
+                            class="flex items-center gap-3 mt-4 md:mt-0 p-3"
+                            :class="{
+                                'absolute right-2 top-full mt-2 bg-white/80 backdrop-blur-md border border-gray-200 shadow-lg rounded-xl p-3 z-50 w-auto md:static md:bg-transparent md:shadow-none md:border-0 md:p-0': true,
+                                'hidden md:flex': !showMobileMenu && window.innerWidth < 768
+                            }"
+                        >
                             <!-- Filter Button (Visible only on 'all' tab) -->
                             <div class="relative" x-show="activeTab === 'all'">
                                 <button
@@ -308,7 +320,7 @@
                                                     <button
                                                         @click="selectedTaskId = {{ $task->id }}; showDeleteModal = true"
                                                         class="px-4 py-2 text-sm font-medium text-spider-accent bg-gray-200 rounded-xl hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                                    >
+                                                    >                       
                                                         Delete
                                                     </button>
                                                 </div>
@@ -336,7 +348,7 @@
             <!-- Floating Action Button -->
             <button
                 @click="openCreateModal()"
-                class="fixed bottom-8 right-8 w-14 h-14 bg-spider-primary text-white rounded-full shadow-soft hover:bg-spider-dark transition-all focus:outline-none focus:ring-2 focus:ring-spider-primary focus:ring-offset-2 flex items-center justify-center z-30"
+                class="fixed bottom-14 right-14 w-14 h-14 bg-spider-primary text-white rounded-full shadow-soft hover:bg-spider-dark transition-all focus:outline-none focus:ring-2 focus:ring-spider-primary focus:ring-offset-2 flex items-center justify-center z-30"
                 aria-label="Create new task"
             >
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
