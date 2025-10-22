@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Act1userSeeder::class,
             MemberSeeder::class,
-            StreetFoodSeeder::class
+            StreetFoodSeeder::class,
+            DavidTodoListSeeder::class
         ]);
         // User::factory(10)->create();
 
