@@ -83,11 +83,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/todo/{todoListChristine}', [TodoListChristineController::class, 'destroy'])->name('todo.destroy');
 });
 
-    Route::get('todolist-david', function(){
-        return view('activities.todolist.david');
-    });
-});
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/david-todo-list', [DavidTodoListController::class, 'index'])->name('david-todo-list.index');
     Route::get('/david-todo-list/show', [DavidTodoListController::class, 'show'])->name('david-todo-list.show');
