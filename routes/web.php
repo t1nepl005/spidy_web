@@ -37,8 +37,9 @@ Route::get('/activities', [ActivityController::class, 'index']);
 
 
 // group this for the activities as inisde it 
-// For the streetfood feature/activity namin
 Route::group(['prefix' => '/activities'], function() {
+
+    // SDtreetfood
     Route::group(['prefix' => '/streetfood'], function() {
         Route::get('/', [StreetFoodController::class, 'index'])->name('streetfood.index');
         Route::get('/create', [StreetFoodController::class, 'create'])->name('streetfood.create');
@@ -48,17 +49,41 @@ Route::group(['prefix' => '/activities'], function() {
         Route::put('/{id}', [StreetFoodController::class, 'update'])->name('streetfood.update');
         Route::delete('/{id}', [StreetFoodController::class, 'destroy'])->name('streetfood.destroy');
     });
-Route::get('/userlist', [Activity1Controller::class, 'index']);
+
+
+    // Todolist david
+    
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/david-todo-list', [DavidTodoListController::class, 'index'])->name('david-todo-list.index');
+        Route::get('/david-todo-list/show', [DavidTodoListController::class, 'show'])->name('david-todo-list.show');
+        Route::post('/david-todo-list', [DavidTodoListController::class, 'store'])->name('david-todo-list.store');
+        Route::post('/david-todo-list/update', [DavidTodoListController::class, 'update'])->name('david-todo-list.update');
+        Route::post('/david-todo-list/update-status', [DavidTodoListController::class, 'updateStatus'])->name('david-todo-list.update-status');
+        Route::delete('/david-todo-list', [DavidTodoListController::class, 'destroy'])->name('david-todo-list.destroy');
+    });
+    
+    // Todolist christine
+    
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/christine-todo', [TodoListChristineController::class, 'index'])->name('todo.index');
+        Route::post('/christine-todo', [TodoListChristineController::class, 'store'])->name('todo.store');
+        Route::patch('/christine-todo/{todoListChristine}/status', [TodoListChristineController::class, 'updateStatus'])->name('todo.updateStatus');
+        Route::delete('/christine-todo/{todoListChristine}', [TodoListChristineController::class, 'destroy'])->name('todo.destroy');
+    });
+
+    Route::get('/userlist', [Activity1Controller::class, 'index']);
+});
+Route::middleware('guest')->group(function (){
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [LoginController::class, 'login']);
+
+    Route::get('register', [RegisterController::class, 'create'])->name('register');
+    Route::post('register', [RegisterController::class, 'store']);
 });
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::get('register', [RegisterController::class, 'create'])->name('register');
-Route::post('register', [RegisterController::class, 'store']);
-
 Route::middleware('auth')->group(function () {
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
@@ -76,18 +101,4 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/todo', [TodoListChristineController::class, 'index'])->name('todo.index');
-    Route::post('/todo', [TodoListChristineController::class, 'store'])->name('todo.store');
-    Route::patch('/todo/{todoListChristine}/status', [TodoListChristineController::class, 'updateStatus'])->name('todo.updateStatus');
-    Route::delete('/todo/{todoListChristine}', [TodoListChristineController::class, 'destroy'])->name('todo.destroy');
-});
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/david-todo-list', [DavidTodoListController::class, 'index'])->name('david-todo-list.index');
-    Route::get('/david-todo-list/show', [DavidTodoListController::class, 'show'])->name('david-todo-list.show');
-    Route::post('/david-todo-list', [DavidTodoListController::class, 'store'])->name('david-todo-list.store');
-    Route::post('/david-todo-list/update', [DavidTodoListController::class, 'update'])->name('david-todo-list.update');
-    Route::post('/david-todo-list/update-status', [DavidTodoListController::class, 'updateStatus'])->name('david-todo-list.update-status');
-    Route::delete('/david-todo-list', [DavidTodoListController::class, 'destroy'])->name('david-todo-list.destroy');
-});

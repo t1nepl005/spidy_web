@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             Act1userSeeder::class,
             MemberSeeder::class,
             StreetFoodSeeder::class,
-            DavidTodoListSeeder::class
         ]);
         // User::factory(10)->create();
 
