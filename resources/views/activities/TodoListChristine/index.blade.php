@@ -1,4 +1,77 @@
 <x-layout>
+<style>
+    .alert-success {
+      background-color: rgba(255, 240, 245, 0.6);
+      border: 1px solid #ffb6c1;
+      color: #d63384;
+      border-radius: 8px;
+    }
+
+    input[type="text"] {
+      border: 1px solid #ffb6c1;
+      color: #333;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #grey;
+      box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.3);
+      outline: none;
+    }
+
+    input[name="description"] {
+      flex: 1.5; 
+    }
+  
+    .action-button {
+      border: 1px solid #ff66a3;
+      color: #gray;
+      background-color: rgba(255, 255, 255, 0.7);
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: rgba(255, 182, 193, 0.3); /* transparent pink hover */
+      color: #d63384;
+      transform: scale(1.05);
+    }
+
+    li.bg-white {
+      background-color: #fff;
+      border-left: 4px solid #ff99c8;
+      box-shadow: 0 2px 6px rgba(255, 192, 203, 0.3);
+      transition: 0.3s;
+    }
+
+    li.bg-white:hover {
+      background-color: #fff5f8;
+      transform: translateY(-2px);
+    }
+
+    .text-gray-600 {
+      color: #black !important;
+      font-size: 0.9rem;
+    }
+
+    select {
+      border-color: #ffb6c1;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #ff66a3;
+      border-radius: 6px;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #ff66a3;
+      box-shadow: 0 0 0 2px rgba(255, 182, 193, 0.3);
+    }
+
+    label {
+      color: #ff66a3;
+    }
+  </style>
   <div class="mb-4">
     <h1 class="text-2xl font-bold mb-2">My Tasks</h1>
 
